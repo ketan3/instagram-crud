@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Edit your Post:</h2>
+    <h3>Post Username: @ <i><%= post.username %></i></h3>
+    <p>Post id: <%= post.id %></p>
+    <form method="post"  action="/posts/<%= post.id %>?_method=PATCH">
+        <textarea rows="10" cols="35" id="content" placeholder="Add caption.." name="caption"><%= post.caption %></textarea>
+        <br> <br>
+        <input value="<%= post.image %>" type="text" name="image" placeholder="Enter your image URL">
+        <br><br>
+        <button>Submit</button>
+    </form>
+</body>
+</html>
